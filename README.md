@@ -1,6 +1,6 @@
 # OT2018  
 
 *italic*  
-** bold **  
+**bold**  
 normal  
 
