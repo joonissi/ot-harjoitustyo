@@ -1,0 +1,113 @@
+commit 13ec44dd3c09d3a974909dc0ba76ebdd16602c70
+Author: joonissi <joonanissinen123@gmail.com>
+Date:   Tue Oct 30 15:19:37 2018 +0200
+
+    qwe
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 29da8db10a12c613e8e5948d61c4552755508063
+Author: joonissi <joonanissinen123@gmail.com>
+Date:   Tue Oct 30 15:18:54 2018 +0200
+
+    file3
+
+ tiedostoja/file3 | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit b012bfa0024e2c685a09d1569f0d20cbaf2b7739
+Author: joonissi <joonanissinen123@gmail.com>
+Date:   Tue Oct 30 15:17:20 2018 +0200
+
+    tiedostoja
+
+ eka.txt          | 3 +++
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 4 files changed, 3 insertions(+)
+
+commit 39cd8ef9db1952841aa20e48449ad362e38df1eb
+Author: joonissi <joonanissinen123@gmail.com>
+Date:   Tue Oct 30 15:10:12 2018 +0200
+
+    delete
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 53115c7fadfc38cf94ede29f7ee3d83b956a299c
+Author: joonissi <joonanissinen123@gmail.com>
+Date:   Tue Oct 30 15:08:58 2018 +0200
+
+    poistettu
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 4d20558f326238da70c6ae2c028471fbb7479763
+Author: joonissi <joonanissinen123@gmail.com>
+Date:   Tue Oct 30 15:07:30 2018 +0200
+
+    muutos 2
+
+ tiedosto.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit dc9e1e26d6424058c23798cd6d679860c3577aaf
+Author: joonissi <joonanissinen123@gmail.com>
+Date:   Tue Oct 30 15:06:58 2018 +0200
+
+    muutos
+
+ tiedosto.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit df49011c7b9a51e8175c57c8ad81980a00e5bfbc
+Author: joonissi <joonanissinen123@gmail.com>
+Date:   Tue Oct 30 15:03:58 2018 +0200
+
+    stuff kansio
+
+ stuff/eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 0ed1817814eede9fd915643a1d1f51af07d916df
+Author: joonissi <joonanissinen123@gmail.com>
+Date:   Tue Oct 30 15:03:22 2018 +0200
+
+    muutoksia
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 864cdcbe86074ecc99dca51295caa6e0efd88dbc
+Author: joonissi <joonanissinen123@gmail.com>
+Date:   Tue Oct 30 15:02:55 2018 +0200
+
+    kolmas filu
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 8c38394cfab6f009b6ab8aba548f3a41f298eee1
+Author: joonissi <joonanissinen123@gmail.com>
+Date:   Tue Oct 30 15:01:23 2018 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 85ce351365348aa297218fac5822833a20e274db
+Author: joonissi <joonanissinen123@gmail.com>
+Date:   Tue Oct 30 14:59:58 2018 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
