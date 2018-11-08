@@ -2,7 +2,7 @@
 
 ## Opintojen seurantajärjestelmä
 
-Teen kurssilla ohjelman jolla voi seurata omien opintojen kulkua. Kirjoitan ohjelman Javalla ja käytän tiedon tallentamisessa  
+Teen kurssilla ohjelman jolla voi seurata omien opintojen kulkua. Kirjoitan ohjelman Javalla ja käytän tiedon tallentamisessa
 tietokantaa josta luetaan, muokataan, lisätään ja poistetaan kursseja. Tietokanta tallennetaan paikallisesti levylle, ja  
 tämän takia käytän tietokantana SQLite-tietokantaa. Ohjelman toimii paikallisesti käyttäjän tietokoneella, jossa on Java asennettuna.  
 
