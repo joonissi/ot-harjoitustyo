@@ -10,10 +10,10 @@ Panostan tässä työssäni ohjelman dokumentointiin, aikataulun noudattamiseen 
 
 
 ## Dokumentaatio
-[KäyttöohjeFIX](https://github.com/joonissi/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)  
+[Käyttöohje](https://github.com/joonissi/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)  
 [Vaatimusmäärittely](https://github.com/joonissi/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)  
-[ArkkitehtuurikuvausFIX](https://github.com/joonissi/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)  
-[TestausdokumenttiFIX](https://github.com/joonissi/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)  
+[Arkkitehtuurikuvaus](https://github.com/joonissi/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)  
+[Testausdokumentti](https://github.com/joonissi/ot-harjoitustyo/blob/master/dokumentaatio/testaus.md)  
 [Tuntikirjanpito](https://github.com/joonissi/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)  
 
 ## Releaset
