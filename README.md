@@ -7,7 +7,7 @@ introa projektin luonteesta ja tekotavasta yleisesti.
 
 ## Dokumentaatio
 [KäyttöohjeFIX](https://github.com/joonissi/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)  
-[VaatimusmäärittelyFIX](https://github.com/joonissi/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)  
+[Vaatimusmäärittely](https://github.com/joonissi/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)  
 [ArkkitehtuurikuvausFIX](https://github.com/joonissi/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)  
 [TestausdokumenttiFIX](https://github.com/joonissi/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)  
 [Tuntikirjanpito](https://github.com/joonissi/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)  
@@ -32,7 +32,7 @@ TODO
   
 
 
-  
+
 ## Tehtävät  
 
 ### Viikko 1
