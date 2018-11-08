@@ -1,8 +1,13 @@
 # OT2018, harjoitustyö  
 
-## APPIN NIMI
+## Opintojen seurantajärjestelmä
 
-introa projektin luonteesta ja tekotavasta yleisesti.
+Teen kurssilla ohjelman jolla voi seurata omien opintojen kulkua. Kirjoitan ohjelman Javalla ja käytän tiedon tallentamisessa  
+tietokantaa josta luetaan, muokataan, lisätään ja poistetaan kursseja. Tietokanta tallennetaan paikallisesti levylle, ja  
+tämän takia käytän tietokantana SQLite-tietokantaa. Ohjelman toimii paikallisesti käyttäjän tietokoneella, jossa on Java asennettuna.  
+
+Panostan tässä työssäni ohjelman dokumentointiin, aikataulun noudattamiseen ja ohjelman testaamiseen. Kaikki ylimenevä aika  
+käytetään ohjelman toiminnallisuuksian ja käyttäjäkokemuksen parantamiseen.
 
 
 ## Dokumentaatio
