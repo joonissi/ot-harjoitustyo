@@ -6,8 +6,7 @@ Teen kurssilla ohjelman jolla voi seurata omien opintojen kulkua. Kirjoitan ohje
 tietokantaa josta luetaan, muokataan, lisätään ja poistetaan kursseja. Tietokanta tallennetaan paikallisesti levylle, ja
 tämän takia käytän tietokantana SQLite-tietokantaa. Ohjelman toimii paikallisesti käyttäjän tietokoneella, jossa on Java asennettuna.
   
-Panostan tässä työssäni ohjelman dokumentointiin, aikataulun noudattamiseen ja ohjelman testaamiseen. Kaikki ylimenevä aika  
-käytetään ohjelman toiminnallisuuksian ja käyttäjäkokemuksen parantamiseen.
+Panostan tässä työssäni ohjelman dokumentointiin, aikataulun noudattamiseen ja ohjelman testaamiseen. Tulen käyttämään kaikki ylimenevän ajan ohjelman toiminnallisuuksien ja käyttäjäkokemuksen parantamiseen.
 
 
 ## Dokumentaatio
