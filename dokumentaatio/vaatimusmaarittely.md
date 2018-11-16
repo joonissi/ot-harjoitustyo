@@ -14,7 +14,7 @@ lisätä muitakin käyttäjärooleja. Toisenlainen käyttäjärooli voisi olla e
 
 Sovelluksessa on eri näkymiä jotka ovat kuvattuna alla olevassa kuvassa tarkemmin.  
   
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/joonissi/ot-harjoitustyo/blob/master/dokumentaatio/opinnot_kayttoliittyma_luonnos.png "kayttoliittyma luonnos")
 
    
 
