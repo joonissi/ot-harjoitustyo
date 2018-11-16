@@ -14,7 +14,8 @@ lisätä muitakin käyttäjärooleja. Toisenlainen käyttäjärooli voisi olla e
 
 Sovelluksessa on eri näkymiä jotka ovat kuvattuna alla olevassa kuvassa tarkemmin.  
   
-KUVA  
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
    
 
 ## Perusversion tarjoama toiminnallisuus

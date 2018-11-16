@@ -3,4 +3,5 @@
 | päivä | aika | mitä tein  |
 | :----:|:-----| :-----|
 | 08.11. | 3   | Dokumentaation tekoa |
-| yht    | 3   | | 
+| 13.11. | 3   | Sovelluksen runko |
+| yht    | 5   | | 
