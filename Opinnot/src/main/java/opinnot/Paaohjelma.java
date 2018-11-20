@@ -8,6 +8,10 @@ package opinnot;
 import javafx.application.Application;
 
 import opinnot.logic.AppLogic;
+
+import opinnot.logic.User;
+
+
 import opinnot.ui.AppUI;
 
 /**
@@ -22,8 +26,11 @@ public class Paaohjelma {
             AppLogic a = new AppLogic();
             a.testLogic();
             
+            User kayttaja = new User("Joona", "Salasana");
+            System.out.println(kayttaja);
+            
             Application.launch(AppUI.class);
             
-            
+
 	}
 }
