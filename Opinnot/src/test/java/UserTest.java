@@ -18,6 +18,7 @@ import static org.junit.Assert.*;
  */
 public class UserTest {
     
+    
     public UserTest() {
     }
     
@@ -31,6 +32,7 @@ public class UserTest {
     
     @Before
     public void setUp() {
+        
     }
     
     @After
@@ -43,7 +45,37 @@ public class UserTest {
      @Test
      public void userObjectCreation() {
          User kayttaja = new User(1, "kayttaja", "salasana");
-         
          assertEquals(kayttaja.getUsername(), "kayttaja");
      }
+     
+     @Test
+     public void useridSettingTest() {
+         User kayttaja = new User(1, "kayttaja", "salasana");
+         kayttaja.setId(999);
+         
+         assertEquals(kayttaja.getId(), 999);
+     }
+     
+    @Test
+    public void userUsernameSettingTest() {
+        User kayttaja = new User(1, "kayttaja", "salasana");
+        kayttaja.setUsername("qoirh");
+
+        assertEquals(kayttaja.getUsername(), "qoirh");
+    }
+    
+    @Test
+    public void userPasswordSettingTest() {
+        User kayttaja = new User(1, "kayttaja", "salasana");
+        kayttaja.setPassword("passu");
+
+        assertEquals(kayttaja.getPassword(), "passu");
+    }
+    
+    @Test
+    public void userToStringTest() {
+        User kayttaja = new User(1, "kayttaja", "salasana");
+
+        assertEquals(kayttaja.toString(), "Käyttäjätunnus: kayttaja Salasana: salasana");
+    }
 }
