@@ -10,12 +10,22 @@ package opinnot.logic;
  * @author jona
  */
 public class User {
+    private int id;
     private String username;
     private String password;
     
-    public User(String username, String password) {
+    public User(int id, String username, String password) {
+        this.id = id;
         this.username = username;
         this.password = password;
+    }
+    
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    public int getId() {
+        return this.id;
     }
     
     public void setUsername(String username) {

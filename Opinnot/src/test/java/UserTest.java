@@ -42,7 +42,7 @@ public class UserTest {
     //
      @Test
      public void userObjectCreation() {
-         User kayttaja = new User("kayttaja", "salasana");
+         User kayttaja = new User(1, "kayttaja", "salasana");
          
          assertEquals(kayttaja.getUsername(), "kayttaja");
      }

@@ -27,16 +27,15 @@ public class Paaohjelma {
             AppLogic a = new AppLogic();
             a.testLogic();
             
-            User kayttaja = new User("Joona", "Salasana");
-            System.out.println(kayttaja);
-            
-            
             Database database = new Database("jdbc:sqlite:testi.db");
             DatabaseUserDao kayttajat = new DatabaseUserDao(database);
             
             // Haetaan kaikki kayttajat kannasta
             List<User> u = kayttajat.findAll();
 
+            for (int i = 0; i < u.size(); i++) {
+                System.out.println(u.get(i));
+            }
             
             Application.launch(AppUI.class);
             
