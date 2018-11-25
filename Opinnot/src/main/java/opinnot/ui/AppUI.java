@@ -19,7 +19,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import opinnot.dao.Database;
-import opinnot.dao.DatabaseUserDao;
+import opinnot.dao.SQLUserDao;
 import opinnot.logic.User;
 
 /**
@@ -32,7 +32,7 @@ public class AppUI extends Application  {
     public void start(Stage ikkuna) throws Exception {
         
         Database database = new Database("jdbc:sqlite:testi.db");
-        DatabaseUserDao kayttajat = new DatabaseUserDao(database);
+        SQLUserDao kayttajat = new SQLUserDao(database);
         
         Label ohjeteksti = new Label("Kirjoita käyttäjätunnus ja salasana kirjautuaksesi");
         Label kayttajatunnusTeksti = new Label("Käyttäjätunnus:");

@@ -12,7 +12,7 @@ import opinnot.ui.AppUI;
 import java.sql.*;
 import java.util.List;
 import opinnot.dao.Database;
-import opinnot.dao.DatabaseUserDao;
+import opinnot.dao.SQLUserDao;
 
 
 /**
@@ -28,7 +28,7 @@ public class Paaohjelma {
         a.testLogic();
 
         Database database = new Database("jdbc:sqlite:testi.db");
-        DatabaseUserDao kayttajat = new DatabaseUserDao(database);
+        SQLUserDao kayttajat = new SQLUserDao(database);
 
         // Haetaan kaikki kayttajat kannasta
         List<User> u = kayttajat.findAll();

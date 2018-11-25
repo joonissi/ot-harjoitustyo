@@ -14,11 +14,11 @@ import opinnot.logic.User;
  *
  * @author jona
  */
-public class DatabaseUserDao implements UserDao {
+public class SQLUserDao implements UserDao {
     
     private Database database;
 
-    public DatabaseUserDao(Database database) {
+    public SQLUserDao(Database database) {
         this.database = database;
     }
     
