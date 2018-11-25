@@ -7,8 +7,11 @@ Millanen on ohjelman rakenne?
 ## Käyttöliittymä
 
 ## Sovelluslogiikka
-
+Ohjelman datamalliin kuuluu User -ja Course luokat. Näissä luokissa kuvataan käyttäjän suorittamia kursseja.  
 ![alt text](https://github.com/joonissi/ot-harjoitustyo/blob/master/dokumentaatio/luokkakaavio.png "luokkakaavio")  
+  
+Ohjelman pakkauskaavio  
+![alt text](https://github.com/joonissi/ot-harjoitustyo/blob/master/dokumentaatio/pakkauskaavio.png "pakkauskaavaio")  
   
 ## Tietojen tallennus  
 
