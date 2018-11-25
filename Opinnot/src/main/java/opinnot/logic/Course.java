@@ -17,7 +17,7 @@ public class Course {
     private boolean done;
     private User user;
     
-    public Course (int id, String name, int points, boolean done, User user) {
+    public Course(int id, String name, int points, boolean done, User user) {
         this.id = id;
         this.name = name;
         this.points = points;

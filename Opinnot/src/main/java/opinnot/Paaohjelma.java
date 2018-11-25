@@ -21,24 +21,24 @@ import opinnot.dao.DatabaseUserDao;
  */
 public class Paaohjelma {
     
-    	public static void main(String [] args) throws Exception {
-            System.out.println("Moi Pääohjelmasta");
-            
-            AppLogic a = new AppLogic();
-            a.testLogic();
-            
-            Database database = new Database("jdbc:sqlite:testi.db");
-            DatabaseUserDao kayttajat = new DatabaseUserDao(database);
-            
-            // Haetaan kaikki kayttajat kannasta
-            List<User> u = kayttajat.findAll();
+    public static void main(String [] args) throws Exception {
+        System.out.println("Moi Pääohjelmasta");
 
-            for (int i = 0; i < u.size(); i++) {
-                System.out.println(u.get(i));
-            }
-            
-            Application.launch(AppUI.class);
-            
+        AppLogic a = new AppLogic();
+        a.testLogic();
 
-	}
+        Database database = new Database("jdbc:sqlite:testi.db");
+        DatabaseUserDao kayttajat = new DatabaseUserDao(database);
+
+        // Haetaan kaikki kayttajat kannasta
+        List<User> u = kayttajat.findAll();
+
+        for (int i = 0; i < u.size(); i++) {
+            System.out.println(u.get(i));
+        }
+
+        Application.launch(AppUI.class);
+
+
+    }
 }

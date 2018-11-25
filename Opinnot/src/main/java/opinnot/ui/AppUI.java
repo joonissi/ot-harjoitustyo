@@ -90,9 +90,6 @@ public class AppUI extends Application  {
                     salasana.equals(kayttaja.getPassword())) {
                     
                     ikkuna.setScene(tervetuloaNakyma);
-                } else {
-                    // ei toimi, miksi?
-                    //virheteksti.setText("käyttäjätunnus tai salasana ei kelpaa");
                 }
             } catch (Exception e) {
                 virheteksti.setText("Käyttäjätunnus tai salasana ei kelpaa");
@@ -105,7 +102,7 @@ public class AppUI extends Application  {
             Random r = new Random();
             int low = 0;
             int high = 100000;
-            int id = r.nextInt(high-low) + low;
+            int id = r.nextInt(high - low) + low;
             
             String tunnus = kayttajatunnuskentta.getText();
             String salasana = salasanakentta.getText();

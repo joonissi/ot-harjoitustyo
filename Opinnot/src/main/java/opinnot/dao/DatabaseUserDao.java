@@ -31,12 +31,12 @@ public class DatabaseUserDao implements UserDao {
         Statement statement = connection.createStatement();
         ResultSet rs = statement.executeQuery("SELECT * FROM User");
        
-        while(rs.next()) {
+        while (rs.next()) {
             
-                User u = new User(rs.getInt("id"), rs.getString("username"),
-                    rs.getString("password"));
+            User u = new User(rs.getInt("id"), rs.getString("username"),
+                rs.getString("password"));
 
-                kayttajat.add(u);
+            kayttajat.add(u);
         }
         
         statement.close();
