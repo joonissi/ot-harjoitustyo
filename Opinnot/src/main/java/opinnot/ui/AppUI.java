@@ -5,6 +5,7 @@
  */
 package opinnot.ui;
 
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import javafx.application.Application;
@@ -20,6 +21,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import opinnot.dao.Database;
 import opinnot.dao.SQLUserDao;
+import opinnot.logic.AppLogic;
 import opinnot.logic.User;
 
 /**
@@ -120,7 +122,21 @@ public class AppUI extends Application  {
         
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+                System.out.println("Moi Pääohjelmasta");
+
+        AppLogic a = new AppLogic();
+        a.testLogic();
+
+        Database database = new Database("jdbc:sqlite:testi.db");
+        SQLUserDao kayttajat = new SQLUserDao(database);
+
+        // Haetaan kaikki kayttajat kannasta
+        List<User> u = kayttajat.findAll();
+
+        for (int i = 0; i < u.size(); i++) {
+            System.out.println(u.get(i));
+        }
         launch(AppUI.class);
     }
 }
