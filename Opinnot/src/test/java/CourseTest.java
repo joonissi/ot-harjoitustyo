@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+import opinnot.logic.Course;
 import opinnot.logic.User;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -16,12 +17,12 @@ import static org.junit.Assert.*;
  *
  * @author jona
  */
-public class UserTest {
+public class CourseTest {
     
     User kayttaja;
+    Course kurssi;
     
-    
-    public UserTest() {
+    public CourseTest() {
     }
     
     @BeforeClass
@@ -36,6 +37,8 @@ public class UserTest {
     public void setUp() {
         
         kayttaja = new User(1, "kayttaja", "salasana");
+         
+        kurssi = new Course(1, "ohjelmointi", 5, false, kayttaja);
     }
     
     @After
@@ -46,34 +49,36 @@ public class UserTest {
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-     public void userObjectCreation() {
-         assertEquals(kayttaja.getUsername(), "kayttaja");
+     public void courseObjectCreation() {
+              
+         assertEquals(kurssi.toString(), "Kurssi: ohjelmointi opintopisteitä: 5");
      }
      
      @Test
-     public void useridSettingTest() {
-         kayttaja.setId(999);
+     public void courseIdUpdate() {
+         kurssi.setId(4);
          
-         assertEquals(kayttaja.getId(), 999);
+         assertEquals(kurssi.getId(), 4);
      }
      
-    @Test
-    public void userUsernameSettingTest() {
-        kayttaja.setUsername("qoirh");
-
-        assertEquals(kayttaja.getUsername(), "qoirh");
-    }
-    
-    @Test
-    public void userPasswordSettingTest() {
-        kayttaja.setPassword("passu");
-
-        assertEquals(kayttaja.getPassword(), "passu");
-    }
-    
-    @Test
-    public void userToStringTest() {
-
-        assertEquals(kayttaja.toString(), "Käyttäjätunnus: kayttaja Salasana: salasana");
-    }
+     @Test
+     public void courseNameUpdate() {
+         kurssi.setName("tietokantojen perusteet");
+         
+         assertEquals(kurssi.getName(), "tietokantojen perusteet");
+     }
+     
+     @Test
+     public void coursePointsUpdate() {
+         kurssi.setPoints(10);
+         
+         assertEquals(kurssi.getPoints(), 10);
+     }
+     
+     @Test
+     public void courseIsDone() {
+         kurssi.setDone();
+         
+         assertEquals(kurssi.getDone(), true);
+     }
 }
