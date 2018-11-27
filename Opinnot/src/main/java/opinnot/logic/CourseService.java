@@ -44,6 +44,10 @@ public class CourseService {
         return loggedIn;
     }
     
+    public void logout() {
+        loggedIn = null;
+    }
+    
     public boolean createUser(String username, String password) throws SQLException {
 
         if (sqlUserDao.findByUsername(username) != null) {
@@ -71,8 +75,4 @@ public class CourseService {
         return id;
     }
 
-    
-    public void testLogic() {
-        System.out.println("Test logic");
-    }
 }
