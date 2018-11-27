@@ -20,8 +20,9 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import opinnot.dao.Database;
+import opinnot.dao.SQLCourseDao;
 import opinnot.dao.SQLUserDao;
-import opinnot.logic.AppLogic;
+import opinnot.logic.CourseService;
 import opinnot.logic.User;
 
 /**
@@ -29,12 +30,19 @@ import opinnot.logic.User;
  * @author jona
  */
 public class AppUI extends Application  {
+    private CourseService courseService;
+    
+    @Override
+    public void init() throws Exception {
+        Database database = new Database("jdbc:sqlite:opinnot.db");
+        SQLUserDao kayttajat = new SQLUserDao(database);
+        SQLCourseDao kurssit = new SQLCourseDao(database, null);
+        
+        courseService = new CourseService(kurssit, kayttajat);
+    }
     
     @Override
     public void start(Stage ikkuna) throws Exception {
-        
-        Database database = new Database("jdbc:sqlite:opinnot.db");
-        SQLUserDao kayttajat = new SQLUserDao(database);
         
         Label ohjeteksti = new Label("Kirjoita käyttäjätunnus ja salasana kirjautuaksesi");
         Label kayttajatunnusTeksti = new Label("Käyttäjätunnus:");
@@ -82,62 +90,42 @@ public class AppUI extends Application  {
             
             String tunnus = kayttajatunnuskentta.getText();
             String salasana = salasanakentta.getText();
-            System.out.println(tunnus);
             
             try {
-                User kayttaja = kayttajat.findByUsername(tunnus);
-                System.out.println(kayttaja.getUsername());
-                
-                if (tunnus.equals(kayttaja.getUsername()) &&
-                    salasana.equals(kayttaja.getPassword())) {
+                if (courseService.login(tunnus, salasana)) {
+                    User user = courseService.getLoggedUser();
                     
-                    tervetuloaTeksti.setText("Tervetuloa, " + kayttaja.getUsername());
+                    tervetuloaTeksti.setText("Tervetuloa, " + user.getUsername());
                     ikkuna.setScene(tervetuloaNakyma);
+                } else {
+                    virheteksti.setText("Käyttäjätunnus tai salasana ei kelpaa");
                 }
+                
             } catch (Exception e) {
-                virheteksti.setText("Käyttäjätunnus tai salasana ei kelpaa");
                 System.out.println(e.getMessage());
             }
         });
         
         rekisteroidynappi.setOnAction((event) -> {
             
-            Random r = new Random();
-            int low = 0;
-            int high = 100000;
-            int id = r.nextInt(high - low) + low;
-            
             String tunnus = kayttajatunnuskentta.getText();
             String salasana = salasanakentta.getText();
             
             try {
-                User uusiKayttaja = kayttajat.create(new User(id, tunnus, salasana));
+                courseService.createUser(tunnus, salasana);
                 virheteksti.setText("Rekisteröinti onnistui, voit nyt kirjautua!");
- 
-            } catch (Exception e) {
+            } catch(Exception e) {
                 virheteksti.setText("Virhe rekisteröinnissä!");
                 System.out.println(e.getMessage());
             }
+            
         });
         
         
     }
 
     public static void main(String[] args) throws Exception {
-        System.out.println("Moi Pääohjelmasta");
 
-        AppLogic a = new AppLogic();
-        a.testLogic();
-
-        Database database = new Database("jdbc:sqlite:opinnot.db");
-        SQLUserDao kayttajat = new SQLUserDao(database);
-
-        // Haetaan kaikki kayttajat kannasta
-        List<User> u = kayttajat.findAll();
-
-        for (int i = 0; i < u.size(); i++) {
-            System.out.println(u.get(i));
-        }
         launch(AppUI.class);
     }
 }
