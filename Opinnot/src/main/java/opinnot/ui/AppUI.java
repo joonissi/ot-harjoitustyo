@@ -33,7 +33,7 @@ public class AppUI extends Application  {
     @Override
     public void start(Stage ikkuna) throws Exception {
         
-        Database database = new Database("jdbc:sqlite:testi.db");
+        Database database = new Database("jdbc:sqlite:opinnot.db");
         SQLUserDao kayttajat = new SQLUserDao(database);
         
         Label ohjeteksti = new Label("Kirjoita käyttäjätunnus ja salasana kirjautuaksesi");
@@ -124,12 +124,12 @@ public class AppUI extends Application  {
     }
 
     public static void main(String[] args) throws Exception {
-                System.out.println("Moi Pääohjelmasta");
+        System.out.println("Moi Pääohjelmasta");
 
         AppLogic a = new AppLogic();
         a.testLogic();
 
-        Database database = new Database("jdbc:sqlite:testi.db");
+        Database database = new Database("jdbc:sqlite:opinnot.db");
         SQLUserDao kayttajat = new SQLUserDao(database);
 
         // Haetaan kaikki kayttajat kannasta
