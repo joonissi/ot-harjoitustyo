@@ -14,7 +14,7 @@ import opinnot.logic.User;
  *
  * @author jona
  */
-public class SQLUserDao implements UserDao {
+public class SQLUserDao implements Dao<User, Integer> {
     
     private Database database;
 
@@ -46,7 +46,7 @@ public class SQLUserDao implements UserDao {
         return kayttajat;
     }
     
-    @Override
+    
     public User findByUsername(String username) throws SQLException {
         
         Connection connection = database.getConnection();
@@ -90,6 +90,33 @@ public class SQLUserDao implements UserDao {
         stmt.close();
         
         return user;
+    }
+    
+    @Override
+    public User findOne(Integer id) throws SQLException {
+        
+        Connection connection = database.getConnection();
+        Statement statement = connection.createStatement();
+        
+        PreparedStatement stmt = connection.prepareStatement("SELECT * FROM User"
+            + " WHERE id = ?");
+        stmt.setInt(1, id);
+        
+        ResultSet rs = stmt.executeQuery();
+        boolean hasOne = rs.next();
+        if (!hasOne) {
+            return null;
+        }
+        
+        User u = new User(rs.getInt("id"), rs.getString("username"),
+            rs.getString("password"));
+        
+        stmt.close();
+        rs.close();
+
+        connection.close();
+        
+        return u;
     }
     
 }

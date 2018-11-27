@@ -13,9 +13,9 @@ import opinnot.logic.User;
  *
  * @author jona
  */
-public interface UserDao {
+public interface Dao<T, K> {
     
-    User create(User user) throws SQLException;
-    User findByUsername(String username) throws SQLException;
-    List<User> findAll() throws SQLException;
+    T create(T object) throws SQLException;
+    T findOne(K key) throws SQLException;
+    List<T> findAll() throws SQLException;
 }

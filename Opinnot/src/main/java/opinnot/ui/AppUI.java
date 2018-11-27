@@ -65,7 +65,7 @@ public class AppUI extends Application  {
         Scene salasanaNakyma = new Scene(asettelu);
 
 
-        Label tervetuloaTeksti = new Label("Tervetuloa, tästä se alkaa!");
+        Label tervetuloaTeksti = new Label("");
 
         StackPane tervetuloaAsettelu = new StackPane();
         tervetuloaAsettelu.setPrefSize(800, 600);
@@ -91,6 +91,7 @@ public class AppUI extends Application  {
                 if (tunnus.equals(kayttaja.getUsername()) &&
                     salasana.equals(kayttaja.getPassword())) {
                     
+                    tervetuloaTeksti.setText("Tervetuloa, " + kayttaja.getUsername());
                     ikkuna.setScene(tervetuloaNakyma);
                 }
             } catch (Exception e) {

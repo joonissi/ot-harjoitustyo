@@ -57,4 +57,8 @@ public class Course {
         return this.done;
     }
     
+    public String toString() {
+        return "Kurssi: " + this.name + " opintopisteitä: " + this.points;
+    }
+    
 }
