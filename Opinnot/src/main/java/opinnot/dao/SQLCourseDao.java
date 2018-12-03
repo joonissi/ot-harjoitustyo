@@ -19,9 +19,13 @@ public class SQLCourseDao implements Dao<Course, Integer> {
     private Database database;
     private Dao<User, Integer> SQLUserDao;
     
-    public SQLCourseDao(Database databse, Dao<User, Integer> SQLUserDao) {
+    public SQLCourseDao(Database database, Dao<User, Integer> SQLUserDao) {
         this.database = database;
         this.SQLUserDao = SQLUserDao;
+    }
+    
+    public String toString() {
+        return this.database.toString();
     }
     
     @Override

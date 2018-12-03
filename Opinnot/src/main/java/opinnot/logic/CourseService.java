@@ -66,7 +66,11 @@ public class CourseService {
         return true;
     }
     
-    private int generateUserId() {
+    public String toString() {
+        return this.sqlCourseDao.toString();
+    }
+    
+    public int generateUserId() {
         Random r = new Random();
         int low = 0;
         int high = 100000;
