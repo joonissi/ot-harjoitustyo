@@ -114,7 +114,7 @@ public class AppUI extends Application  {
             try {
                 courseService.createUser(tunnus, salasana);
                 virheteksti.setText("Rekisteröinti onnistui, voit nyt kirjautua!");
-            } catch(Exception e) {
+            } catch (Exception e) {
                 virheteksti.setText("Virhe rekisteröinnissä!");
                 System.out.println(e.getMessage());
             }

@@ -59,7 +59,7 @@ public class CourseService {
         User user = new User(id, username, password);
         try {
             sqlUserDao.create(user);
-        } catch(Exception e) {
+        } catch (Exception e) {
             return false;
         }
         
