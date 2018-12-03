@@ -18,21 +18,38 @@ Panostan tässä työssäni ohjelman dokumentointiin, aikataulun noudattamiseen 
 
 ## Releaset
 
-[Viikko 2FIX](https://github.com/joonissi/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
+[Viikko 5](https://github.com/joonissi/ot-harjoitustyo/releases/tag/viikko5)
 
 ## Komentorivitoiminnot
+Seuraavilla komennoilla voidaan suorittaa eri toimenpiteitä projektia varten.
 
 ### Testaus  
-TODO  
+Testit projektille suoritetaan  
+```
+mvn test
+```
+Testikattavuus projektille suoritetaan  
+```
+mvn jacoco:report
+```
   
 ### Suoritettavan jarin generointi  
-TODO  
+Projektille generoidaan suoritettava jar-tiedosto komennolla (jar-tiedosto generoituu target kansioon)  
+```
+mvn package
+```
   
 ###  JavaDoc  
-TODO  
+JavaDoc projektille saadaan komennolla  
+```
+mvn javadoc:javadoc
+```
   
 ### Checkstyle  
-TODO  
+Checkstyle pitää huolta koodin laadusta ja tätä voi tarkkailla komennolla  
+```
+mvn jxr:jxr checkstyle:checkstyle
+```
   
 
 
