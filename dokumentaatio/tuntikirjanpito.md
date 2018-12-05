@@ -8,4 +8,5 @@
 | 23.11. | 2   | Tietokantaan User metodit |
 | 25.11. | 2   | Dokumentaatio |
 | 27.11. | 4   | kurssin luokka, refactor |
-| yht    | 17   | | 
+| 03.12. | 4   | dokumentaatio, testit |
+| yht    | 21   | | 

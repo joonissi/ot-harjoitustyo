@@ -5,3 +5,5 @@
 Opinnot/target
 /Opinnot/nbproject/
 .DS_store
+.classpath
+.project
