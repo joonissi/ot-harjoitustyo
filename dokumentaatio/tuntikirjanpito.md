@@ -9,4 +9,5 @@
 | 25.11. | 2   | Dokumentaatio |
 | 27.11. | 4   | kurssin luokka, refactor |
 | 03.12. | 4   | dokumentaatio, testit |
-| yht    | 21   | | 
+| 10.12. | 4   | kurssien lisäys, UI |
+| yht    | 25   | | 

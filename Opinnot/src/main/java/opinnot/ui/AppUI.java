@@ -5,18 +5,19 @@
  */
 package opinnot.ui;
 
-import java.util.List;
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import opinnot.dao.Database;
@@ -74,13 +75,59 @@ public class AppUI extends Application  {
 
 
         Label tervetuloaTeksti = new Label("");
+        
+        
+        TableView table = new TableView();
+        
+        table.setEditable(false);
+ 
+        TableColumn idCol = new TableColumn("Id");
+        TableColumn nameCol = new TableColumn("Course Name");
+        nameCol.setMinWidth(200);
+        
+        TableColumn pointsCol = new TableColumn("Points");
+        TableColumn doneCol = new TableColumn("Done");
+        
+        
+        table.getColumns().addAll(idCol, nameCol, pointsCol, doneCol);
 
-        StackPane tervetuloaAsettelu = new StackPane();
-        tervetuloaAsettelu.setPrefSize(800, 600);
-        tervetuloaAsettelu.getChildren().add(tervetuloaTeksti);
-        tervetuloaAsettelu.setAlignment(Pos.CENTER);
+        TextField addCourseName = new TextField();
+        addCourseName.setPromptText("Course name");
+        
+        TextField addCoursePoints = new TextField();
+        addCoursePoints.setPromptText("Points");
+        
+        CheckBox addCourseDone = new CheckBox("Done");
 
-        Scene tervetuloaNakyma = new Scene(tervetuloaAsettelu);
+        
+        Button addButton = new Button("Add");
+        
+        Button logoutButton = new Button("Logout");
+        
+        HBox hbUp = new HBox();
+        
+        hbUp.getChildren().addAll(tervetuloaTeksti, logoutButton);
+        hbUp.setSpacing(270);
+        
+        HBox hbDown = new HBox();
+        
+        hbDown.getChildren().addAll(addCourseName, addCoursePoints,addCourseDone, addButton);
+        hbDown.setSpacing(3);
+        
+
+        GridPane asetteluKaksi = new GridPane();
+        
+        asetteluKaksi.add(hbUp, 0, 0);
+        asetteluKaksi.add(table, 0, 1);
+        asetteluKaksi.add(hbDown, 0, 2);
+        
+        asetteluKaksi.setPrefSize(800, 600);
+        asetteluKaksi.setAlignment(Pos.CENTER);
+        asetteluKaksi.setVgap(10);
+        asetteluKaksi.setHgap(10);
+        asetteluKaksi.setPadding(new Insets(20, 20, 20, 20));
+
+        Scene tervetuloaNakyma = new Scene(asetteluKaksi);
         
         
         ikkuna.setScene(salasanaNakyma);
@@ -118,6 +165,12 @@ public class AppUI extends Application  {
                 virheteksti.setText("Virhe rekisteröinnissä!");
                 System.out.println(e.getMessage());
             }
+            
+        });
+        
+        logoutButton.setOnAction((event) -> {
+            ikkuna.setScene(salasanaNakyma);
+            courseService.logout();
             
         });
         
