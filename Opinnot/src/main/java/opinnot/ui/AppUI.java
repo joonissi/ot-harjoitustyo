@@ -55,15 +55,18 @@ public class AppUI extends Application  {
         Label virheteksti = new Label("");
 
         GridPane asettelu = new GridPane();
+        HBox hbLogin = new HBox();
+        hbLogin.setSpacing(130);
+        
+        hbLogin.getChildren().addAll(kirjaudunappi, rekisteroidynappi);
 
         asettelu.add(ohjeteksti, 0, 0);
         asettelu.add(kayttajatunnusTeksti, 0, 2);
         asettelu.add(kayttajatunnuskentta, 0, 3);
         asettelu.add(salasanaTeksti, 0, 4);
         asettelu.add(salasanakentta, 0, 5);
-        asettelu.add(kirjaudunappi, 0, 6);
-        asettelu.add(rekisteroidynappi, 0, 7);
-        asettelu.add(virheteksti, 0, 8);
+        asettelu.add(hbLogin, 0, 6);
+        asettelu.add(virheteksti, 0, 7);
 
         asettelu.setPrefSize(800, 600);
         asettelu.setAlignment(Pos.CENTER);
