@@ -18,7 +18,7 @@ Panostan tässä työssäni ohjelman dokumentointiin, aikataulun noudattamiseen 
 
 ## Releaset
 
-[Viikko 5](https://github.com/joonissi/ot-harjoitustyo/releases/tag/viikko5)
+[versio 2.0](https://github.com/joonissi/ot-harjoitustyo/releases/tag/2.0)
 
 ## Komentorivitoiminnot
 Seuraavilla komennoilla voidaan suorittaa eri toimenpiteitä projektia varten.
