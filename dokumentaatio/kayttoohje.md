@@ -1,24 +1,24 @@
 # Käyttöohje
 
-Lataa tiedosto OSOITE TÄHÄN
+Lataa tiedosto [opinnot-2.0](https://github.com/joonissi/ot-harjoitustyo/releases/download/2.0/Opinnot-2.0.jar)
 
 ## Konfigurointi
 
-Ohjelmaa ei tarvitse tarkemmin konfiguroida ennen käyttöä. Sovellus hoitaa konfiguroinnin käyttjän puolesta.
+Ohjelmaa ei tarvitse tarkemmin konfiguroida ennen käyttöä. Sovellus hoitaa konfiguroinnin käyttäjän puolesta.
 
 ## Ohjelman käynnistäminen
 
 Ohjelma suoritetaan komennolla:
+```
+java -jar opinnot-2.0.jar
+```
 
-java -jar opinnot.jar
 
 ## Kirjautuminen
 
 Ohjelma käynnistyy ja luo tarvittavat tiedostot käyttäjän kovalevylle. Alkutilassa tietokanta on tyhjä, joten käyttäjä joutuu rekisteröimään itselleen tunnuksen.
-KUVA TÄHÄN
 
-Kun käyttäjä on rekisteröinyt käyttäjätunnuksen voi hän kirjautua sillä ja valitsemalla salasanalla sovellukseen.
-KUVA TÄHÄN
+Kun käyttäjä on rekisteröinyt käyttäjätunnuksen voi hän kirjautua sillä ja valitsemallaan salasanalla sovelluksen kirjautumisnäkymässä.
 
 ## Opintojen merkkaaminen
 
@@ -40,4 +40,4 @@ valmiiksi saattaminen tapahtuu painamalla 'Edit' -nappia jolloin ohjelma päivit
 
 ## Uloskirjautuminen
 
-Yläreunassa on nappi 'logout' mitä painamalla käyttäjä voi kirjautua ulos sovelluksesta. Tällöin käyttäjä palautuu ohjelman päävalikkoon.
+Yläreunassa on nappi 'logout' mitä painamalla käyttäjä voi kirjautua ulos sovelluksesta. Tällöin käyttäjä palautuu ohjelman alkunäkymään.

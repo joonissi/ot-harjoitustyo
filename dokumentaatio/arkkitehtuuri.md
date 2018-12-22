@@ -24,12 +24,20 @@ vaihtaa vain pienillä muutoksilla ohjelmakoodiin. Luokat ovat eriytetty rajapin
 
 Ohjelma tallentaa tiedot opinnot.db -tiedostoon joka toimii paikallisena tietokantana. Tietokannassa on tietotaulut suunnitelluille User -ja Course luokille.  
 User taulun skeema on seuraava:
-
+  
 id, username, password  
   
-1 | kayttaja | salasana |
+1 | kayttaja | salasana |  
+  
+  
+Course taulun skeema on seuraava:  
+  
+id, name, points, done, user_id  
+  
+1| ohjelmointi| 5| true| 1|
   
 
 ## Ohjelman rakenteeseen jääneet heikkoudet
-  
+Ohjelmaan jäi vielä parannettavaa. Muutama bugi jäi ohjelmaan, mutta eivät haittaa sen peruskäyttöä.
+Ohjelmaa voisi vielä refactoroida joka toisi sille selkeyttä ja olisi tällöin helpommin laajennettavissa.
   
