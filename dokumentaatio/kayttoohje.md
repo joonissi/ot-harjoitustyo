@@ -4,7 +4,7 @@ Lataa tiedosto [opinnot-2.0](https://github.com/joonissi/ot-harjoitustyo/release
 
 ## Konfigurointi
 
-Ohjelmaa ei tarvitse tarkemmin konfiguroida ennen käyttöä. Sovellus hoitaa konfiguroinnin käyttjän puolesta.
+Ohjelmaa ei tarvitse tarkemmin konfiguroida ennen käyttöä. Sovellus hoitaa konfiguroinnin käyttäjän puolesta.
 
 ## Ohjelman käynnistäminen
 
