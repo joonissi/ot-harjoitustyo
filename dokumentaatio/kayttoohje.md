@@ -40,4 +40,4 @@ valmiiksi saattaminen tapahtuu painamalla 'Edit' -nappia jolloin ohjelma päivit
 
 ## Uloskirjautuminen
 
-Yläreunassa on nappi 'logout' mitä painamalla käyttäjä voi kirjautua ulos sovelluksesta. Tällöin käyttäjä palautuu ohjelman päävalikkoon.
+Yläreunassa on nappi 'logout' mitä painamalla käyttäjä voi kirjautua ulos sovelluksesta. Tällöin käyttäjä palautuu ohjelman alkunäkymään.
