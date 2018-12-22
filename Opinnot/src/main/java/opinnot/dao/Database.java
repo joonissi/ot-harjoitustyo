@@ -20,8 +20,41 @@ public class Database {
         this.databaseAddress = databaseAddress;
     }
 
+    /**
+     * Connects to database
+     * @return
+     * @throws SQLException 
+     */
     public Connection getConnection() throws SQLException {
         return DriverManager.getConnection(databaseAddress);
+    }
+    
+    public boolean getTable(String table) {
+        
+        try {
+            Connection connection = this.getConnection();
+            DatabaseMetaData md = connection.getMetaData();
+        
+            ResultSet res = md.getTables(null, null, table, 
+                new String[] {"TABLE"});
+            
+            System.out.println(res.getString("TABLE_NAME"));
+            
+            while (res.next()) {
+                if (res.getString("TABLE_NAME").equals(table)) {
+                    res.close();
+                    connection.close();
+                    
+                    return true;
+                }
+             }
+            
+            res.close();
+            connection.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return false;
     }
     
     public String toString() {

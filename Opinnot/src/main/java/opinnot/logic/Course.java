@@ -57,6 +57,10 @@ public class Course {
         return this.done;
     }
     
+    public int getUserId() {
+        return this.user.getId();
+    }
+    
     public String toString() {
         return "Kurssi: " + this.name + " opintopisteitä: " + this.points;
     }

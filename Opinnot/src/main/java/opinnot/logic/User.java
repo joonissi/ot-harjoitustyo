@@ -5,6 +5,8 @@
  */
 package opinnot.logic;
 
+import java.util.List;
+
 /**
  *
  * @author jona
@@ -13,6 +15,7 @@ public class User {
     private int id;
     private String username;
     private String password;
+    private List<Course> courses;
     
     public User(int id, String username, String password) {
         this.id = id;

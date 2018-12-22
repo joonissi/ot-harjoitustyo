@@ -5,7 +5,11 @@
  */
 package opinnot.ui;
 
+import java.util.ArrayList;
+import java.util.List;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -16,6 +20,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -23,6 +28,7 @@ import javafx.stage.Stage;
 import opinnot.dao.Database;
 import opinnot.dao.SQLCourseDao;
 import opinnot.dao.SQLUserDao;
+import opinnot.logic.Course;
 import opinnot.logic.CourseService;
 import opinnot.logic.User;
 
@@ -36,10 +42,19 @@ public class AppUI extends Application  {
     @Override
     public void init() throws Exception {
         Database database = new Database("jdbc:sqlite:opinnot.db");
-        SQLUserDao kayttajat = new SQLUserDao(database);
-        SQLCourseDao kurssit = new SQLCourseDao(database, null);
         
-        courseService = new CourseService(kurssit, kayttajat);
+        SQLUserDao users = new SQLUserDao(database);
+        SQLCourseDao kurssit = new SQLCourseDao(database, users);
+        
+        if (!database.getTable("User")) {
+            users.createTable();
+        }
+        
+        if (!database.getTable("Course")) {
+            kurssit.createTable();
+        }
+        
+        courseService = new CourseService(kurssit, users);
     }
     
     @Override
@@ -80,19 +95,20 @@ public class AppUI extends Application  {
         Label tervetuloaTeksti = new Label("");
         
         
-        TableView table = new TableView();
+        TableView<Course> table = new TableView();
         
         table.setEditable(false);
  
         TableColumn idCol = new TableColumn("Id");
         TableColumn nameCol = new TableColumn("Course Name");
-        nameCol.setMinWidth(200);
+        nameCol.setMinWidth(150);
         
         TableColumn pointsCol = new TableColumn("Points");
         TableColumn doneCol = new TableColumn("Done");
+        TableColumn editCol = new TableColumn("Edit");
+        TableColumn deleteCol = new TableColumn("Delete");
         
-        
-        table.getColumns().addAll(idCol, nameCol, pointsCol, doneCol);
+        table.getColumns().addAll(idCol, nameCol, pointsCol, doneCol, editCol, deleteCol);
 
         TextField addCourseName = new TextField();
         addCourseName.setPromptText("Course name");
@@ -147,6 +163,48 @@ public class AppUI extends Application  {
                     
                     tervetuloaTeksti.setText("Tervetuloa, " + user.getUsername());
                     ikkuna.setScene(tervetuloaNakyma);
+                    
+                    courseService.setCourses();
+                    
+                    System.out.println(courseService.getCourses());
+                    List <Course> courses = courseService.getCourses();
+                    
+                    ObservableList<Course> data = FXCollections.observableList(courses);
+
+                    table.setItems(data);
+                    
+                    idCol.setCellValueFactory(new PropertyValueFactory<Course, String>("id"));
+                    nameCol.setCellValueFactory(new PropertyValueFactory<Course, String>("name"));
+                    pointsCol.setCellValueFactory(new PropertyValueFactory<Course, Integer>("points"));
+                    doneCol.setCellValueFactory(new PropertyValueFactory<Course, Boolean>("done"));
+                    
+                    editCol.setCellFactory(ActionButtonTableCell.<Course>forTableColumn("Edit", (Course c) -> {
+                        //table.getItems().remove(c);
+                        addCourseName.setText(c.getName());
+                        addCoursePoints.setText(Integer.toString(c.getPoints()));
+                        
+                        if (c.getDone()) {
+                            addCourseDone.setSelected(true);
+                            addButton.setText("Edit");
+                        } else {
+                            addCourseDone.setSelected(false);
+                            addButton.setText("Edit");
+                        }
+                        
+                        return c;
+                    })); 
+                    
+                    deleteCol.setCellFactory(ActionButtonTableCell.<Course>forTableColumn("Delete", (Course c) -> {
+                        table.getItems().remove(c);
+                        
+                        try {
+                            courseService.deleteCourse(c);
+                        } catch (Exception e) {
+                            System.out.println(e.getMessage());
+                        }
+                        return c;
+                    })); 
+                    
                 } else {
                     virheteksti.setText("Käyttäjätunnus tai salasana ei kelpaa");
                 }
@@ -175,6 +233,46 @@ public class AppUI extends Application  {
             ikkuna.setScene(salasanaNakyma);
             courseService.logout();
             
+        });
+        
+        addButton.setOnAction((event) -> {
+            
+            
+            
+            User user = courseService.getLoggedUser();
+            
+            String courseName = addCourseName.getText();
+            int coursePoints = Integer.parseInt(addCoursePoints.getText());
+            Boolean courseDone = false;
+            
+            if (addCourseDone.isSelected()) {
+                courseDone = true;
+            }
+            
+            if (addButton.getText().equals("Add")) {
+                Course newCourse = new Course(courseService.generateUserId(),
+                        courseName, coursePoints, courseDone, user);
+
+                try {
+                    courseService.createCourse(newCourse);
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+
+                try {
+                    List <Course> courses = courseService.getCourses();
+
+                    courses.add(newCourse);
+
+                    table.setItems(FXCollections.observableArrayList(courses));
+
+
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            } else {
+
+            }
         });
         
         
