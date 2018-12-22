@@ -166,7 +166,6 @@ public class AppUI extends Application  {
                     
                     courseService.setCourses();
                     
-                    System.out.println(courseService.getCourses());
                     List <Course> courses = courseService.getCourses();
                     
                     ObservableList<Course> data = FXCollections.observableList(courses);

@@ -10,4 +10,8 @@
 | 27.11. | 4   | kurssin luokka, refactor |
 | 03.12. | 4   | dokumentaatio, testit |
 | 10.12. | 4   | kurssien lisäys, UI |
-| yht    | 25   | | 
+| 19.12. | 4   | dao korjailua |
+| 20.12. | 3   | kurssi dao korjaus |
+| 21.12. | 4   | kurssi crud |
+| 22.12. | 4   | viimeistely, dokumentointi |
+| yht    | 41   | | 

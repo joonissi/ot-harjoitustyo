@@ -18,7 +18,7 @@ TODO
 
 ## Järjestelmätestaus
 
-TODO  
+Järjestelmätestaus on tehty manuaalisesti sovelluksen kehitysvaiheessa.
 
 ### Asennus ja kanfigurointi
 

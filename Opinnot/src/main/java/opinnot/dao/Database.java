@@ -37,9 +37,7 @@ public class Database {
         
             ResultSet res = md.getTables(null, null, table, 
                 new String[] {"TABLE"});
-            
-            System.out.println(res.getString("TABLE_NAME"));
-            
+                        
             while (res.next()) {
                 if (res.getString("TABLE_NAME").equals(table)) {
                     res.close();

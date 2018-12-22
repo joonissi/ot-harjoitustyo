@@ -124,15 +124,11 @@ public class SQLCourseDao implements Dao<Course, Integer> {
         ResultSet rs = statement.executeQuery("SELECT * FROM Course");
         
         while (rs.next()) {
-            
-            System.out.println("user id: " + rs.getInt("user_id"));
-            
+                        
             User user = SQLUserDao.findOne(rs.getInt("user_id"));
             
             Course c = new Course(rs.getInt("id"), rs.getString("name"),
                 rs.getInt("points"), rs.getBoolean("done"), user);
-
-            System.out.println(rs.getInt("id") + rs.getString("name"));
             
             courses.add(c);
                 
