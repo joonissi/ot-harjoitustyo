@@ -13,5 +13,5 @@
 | 19.12. | 4   | dao korjailua |
 | 20.12. | 3   | kurssi dao korjaus |
 | 21.12. | 4   | kurssi crud |
-| 22.12. | 4   | viimeistely, dokumentointi |
-| yht    | 41   | | 
+| 22.12. | 6   | viimeistely, dokumentointi |
+| yht    | 43   | | 
