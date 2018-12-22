@@ -15,7 +15,7 @@ DAO-luokkia on testattu oikealla tietokannalla, mutta tätä voisi tulevaisuudes
 ### Testauskattavuus
 
 Testauskattavuuteen ei olla laskettu sovelluksen käyttöliittymää jolloin rivikattuvuus on 39% ja haarautumakattavuus 23%
-![alt text](https://github.com/joonissi/ot-harjoitustyo/blob/master/dokumentaatio/testikattavuus.png "testikattavuus")
+![alt text](https://github.com/joonissi/ot-harjoitustyo/blob/master/dokumentaatio/testauskattavuus.png "testikattavuus")
 
 ## Järjestelmätestaus
 
