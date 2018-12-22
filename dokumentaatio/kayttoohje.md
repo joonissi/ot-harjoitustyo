@@ -18,7 +18,7 @@ java -jar opinnot-2.0.jar
 
 Ohjelma käynnistyy ja luo tarvittavat tiedostot käyttäjän kovalevylle. Alkutilassa tietokanta on tyhjä, joten käyttäjä joutuu rekisteröimään itselleen tunnuksen.
 
-Kun käyttäjä on rekisteröinyt käyttäjätunnuksen voi hän kirjautua sillä ja valitsemalla salasanalla sovellukseen.
+Kun käyttäjä on rekisteröinyt käyttäjätunnuksen voi hän kirjautua sillä ja valitsemallaan salasanalla sovelluksen kirjautumisnäkymässä.
 
 ## Opintojen merkkaaminen
 
